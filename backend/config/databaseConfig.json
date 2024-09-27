@@ -1,0 +1,5 @@
+{
+    "CONNECTIONSTRING" : "mongodb+srv://admin:dbconnect2024@mongocluster.f3oe4.mongodb.net/?retryWrites=true&w=majority&appName=mongoCluster",
+    "DATABASENAME" : "cherryPark",
+    "COLLECTIONNAME": "cherryParkResidents"
+}
