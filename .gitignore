@@ -1,2 +1,6 @@
 node_modules/
 dist/
+frontend/.angular/cache/
+frontend/.vscode/
+frontend/dist
+frontend/tmp

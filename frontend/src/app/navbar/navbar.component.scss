@@ -1,0 +1,30 @@
+.tab-menu-container {
+    display: flex;
+    align-items: center;
+    background-color: darkslategray;
+    height: 20vh;
+}
+
+.logo-container {
+    margin-left: auto;
+    margin-right: 40px;
+}
+  
+.logo {
+    width: 150px;
+    height: auto;
+}
+.logo-text {
+    margin-top: 0px; /* Add some space between the logo and the text */
+    font-size: 20px; /* Adjust the font size */
+    color:  green; /* Change the text color */
+    text-align: center; /* Center the text */
+}
+
+.custom-logo-text {
+    font-family: 'Lobster', cursive; /* Example of a stylish font */
+    font-size: 4rem; /* Adjust the size as needed */
+    color: green; /* Customize the color */
+    text-shadow: 2px 2px 4px black; /* Optional: add text shadow */
+    font-weight: bold; /* Optional: make the text bold */
+}

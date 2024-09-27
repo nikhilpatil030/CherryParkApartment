@@ -1,0 +1,6 @@
+
+<p-galleria [value]="images" [showItemNavigators]="true" [showThumbnails]="false" [circular]="true" [autoPlay]="true" [transitionInterval]="5000">
+    <ng-template pTemplate="item" let-item>
+        <div class="background-image" [ngStyle]="{'background-image': 'url(' + item + ')'}"></div>
+    </ng-template>
+</p-galleria>

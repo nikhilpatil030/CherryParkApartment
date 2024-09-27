@@ -1,0 +1,25 @@
+<p>residents works!</p>
+
+
+<!--<h1 *ngFor="let resident of residents">{{  resident }}</h1>-->
+
+<p-table [value]="residents">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>apartment no</th>
+        <th>personal identification</th>
+        <th>year of enrollment</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item['apartment no'] }}</td>
+        <td>{{ item['personal identification'] }}</td>
+        <td>{{ item['year of enrollment'] }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  
