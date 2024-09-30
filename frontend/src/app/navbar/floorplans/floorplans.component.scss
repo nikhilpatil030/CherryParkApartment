@@ -1,0 +1,82 @@
+.heading{
+    padding-left: 10px;
+}
+
+.custom-paragraph{
+    font-size: 15px;
+    text-align: justify;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.custom-input {
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.custom-table {
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* Container for the tiles */
+.tile-container {
+    display: flex;                      /* Use flexbox to align tiles in a row */
+    flex-wrap: wrap;                    /* Allow wrapping when screen is smaller */
+    gap: 16px;                          /* Space between tiles */
+    justify-content: space-between;     /* Space evenly between tiles */
+    margin: 0 auto;                     /* Center the container */
+}
+
+/* Individual tile styling */
+.tile {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    display: inline-flex;
+    flex-direction: column;             /* Stack content inside tile vertically */
+    flex: 1 1 calc(33.333% - 16px);     /* 3 tiles per row */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;                   /* Prevents content from spilling out of the tile */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow to make tiles stand out */
+    max-width: calc(32.333% - 16px);                    /* Ensure tiles don't overflow */
+    width: calc(32.333% - 16px);     
+}
+
+/* Tile image */
+.tile-img {
+    width: 100%;                        /* Make the image fill the width of the tile */
+    height: 100%;                       /* Make the image fill the height of the tile */
+    object-fit: cover;                  /* Cover the tile without distorting the image */
+}
+
+/* Tile header styling */
+.tile-header {
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Tile body styling */
+.tile-body p {
+    margin: 4px 0;
+    text-align: center;
+}
+
+/* Responsive: 2 tiles per row on tablets */
+@media (max-width: 1200px) {
+    .tile {
+        max-width: calc(32.333% - 16px);                    /* Ensure tiles don't overflow */
+        width: calc(32.333% - 16px);     
+    }
+}
+
+/* Responsive: 1 tile per row on mobile */
+@media (max-width: 480px) {
+    .tile {
+        flex: 1 1 100%;                 /* Display 1 tile per row */
+    }
+}

@@ -6,7 +6,7 @@ var databaseConfig = require('../../../config/databaseConfig.json');
 
 // Get all residents
 export const getAllResidents = (req: Request, res: Response): void => {
-    findAll(databaseConfig.COLLECTIONNAME).then((result) => {
+    findAll(databaseConfig.residentsCollection).then((result) => {
         res.status(200).json({
             message: 'All residents retrieved successfully',
             data: result

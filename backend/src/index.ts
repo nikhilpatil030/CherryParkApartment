@@ -6,8 +6,9 @@ var cors = require('cors');
 var config = require('../config/indixConfig.json');
 
 //import routes 
-import residentsRoutes from './routes/residentsRoutes';
 import { connectDatabase } from './database/databaseConnection';
+import residentsRoutes from './routes/residentsRoutes';
+import floorPlanRoutes from './routes/floorPlanRoutes';
 
 // Create an Express application
 var app = Express();
@@ -16,8 +17,9 @@ app.use(cors());
 // Middleware to parse incoming JSON requests
 app.use(Express.json());
 
-//mount resident routes
+//mount routes
 app.use('/residents', residentsRoutes)
+app.use('/floorPlan', floorPlanRoutes)
 
 // Start the server
 app.listen(config.expressPort, async () => {
