@@ -1,3 +1,5 @@
 {
-    "getAllResidents" : "residents/getAllResidents"
+    "getAllResidents" : "residents/getAllResidents",
+    "verifyResident" : "residents/verifyResident",
+    "backgroundImageUrl" : "https://st2.depositphotos.com/3767467/7417/i/450/depositphotos_74174555-stock-photo-city-park-with-modern-buildings.jpg"
 }

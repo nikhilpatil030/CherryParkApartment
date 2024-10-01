@@ -1,25 +1,31 @@
-<p>residents works!</p>
 
 
-<!--<h1 *ngFor="let resident of residents">{{  resident }}</h1>-->
+<div class="background_residents" [ngStyle]="{'background-image': 'url(' + backgroundImageUrl + ')'}">
 
-<p-table [value]="residents">
-    <ng-template pTemplate="header">
-      <tr>
-        <th>Name</th>
-        <th>apartment no</th>
-        <th>personal identification</th>
-        <th>year of enrollment</th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-item>
-      <tr>
-        <td>{{ item.name }}</td>
-        <td>{{ item['apartment no'] }}</td>
-        <td>{{ item['personal identification'] }}</td>
-        <td>{{ item['year of enrollment'] }}</td>
-      </tr>
-    </ng-template>
-  </p-table>
+  <h1 class="center-heading">Resident Login</h1>
 
-  
+  <div class="login-container" >
+    <p-card header="Login" class="login-card">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="p-field">
+          <label for="username">Username</label>&nbsp;&nbsp;
+          <input id="username" pInputText formControlName="username" placeholder="Enter your username" />
+          <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched" class="error-message">
+            Username is required.
+          </div>
+        </div>
+
+        <div class="p-field">
+          <label for="password">Password</label>&nbsp;&nbsp;
+          <input id="password" pPassword formControlName="password" placeholder="Enter your password" />
+          <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error-message">
+            Password is required.
+          </div>
+        </div>
+
+        <p-button label="Login" [ngStyle]="{ 'justifyContent': 'center' }"  type="submit" [disabled]="loginForm.invalid"></p-button>
+      </form>
+    </p-card>
+  </div>
+</div>
+

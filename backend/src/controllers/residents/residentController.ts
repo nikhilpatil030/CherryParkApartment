@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { findAll } from '../../database/databaseConnection';
+import { findAll , findOne} from '../../database/databaseConnection';
 
 var databaseConfig = require('../../../config/databaseConfig.json');
 
@@ -23,5 +23,22 @@ export const putResident = (req: Request, res: Response): void => {
     res.status(200).json({
       message: 'resident updated successfully',
       data: []
+    });
+}
+
+export const verifyResident = (req: Request, res: Response): void => {
+    const { username, password } = req.body;
+    // Query to find one user by username
+    const query = { username: username , password: password };
+    findOne(databaseConfig.residentsCollection, query).then((result) => {
+        res.status(200).json({
+        message: 'resident verified successfully',
+        data: result
+        });
+    }).catch((err) => {
+        res.status(500).json({
+        message: 'Error verifying resident',
+        error: err
+        });
     });
 }

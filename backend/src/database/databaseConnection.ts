@@ -26,3 +26,15 @@ export function findAll(collectionName:string):Promise<any> {
         });
     })
 }
+
+export function findOne(collectionName:string, query:any):Promise<any> {
+    return new Promise((resolve, reject) => {
+        database.collection(collectionName).findOne(query).then((result: any) => {
+            if (!result) reject("result not found");
+            resolve(result);
+        }).catch((err: any) => {
+            console.log(" err: " + JSON.stringify(err) );
+            reject(err);
+        });
+    })
+}

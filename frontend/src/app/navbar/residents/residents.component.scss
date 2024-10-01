@@ -1,0 +1,41 @@
+.background_residents {
+    background-size: cover;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    height: 80vh; /* Full height of the viewport */
+    margin : 0;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.center-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    margin: 0;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+  
+.login-card {
+    width: 500px;
+}
+  
+.p-field {
+    width: 100%; /* Make the input field take up full width of the parent */
+    padding: 10px; /* Add padding inside the input field */
+    margin: 10px 0; /* Add space above and below the input */
+    border: 1px solid #ccc; /* Add a light border */
+    border-radius: 4px; /* Slightly round the corners */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 16px; /* Set font size */
+}
+  
+.error-message {
+    color: red;
+    font-size: 0.85em;
+}
