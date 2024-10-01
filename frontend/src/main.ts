@@ -13,6 +13,7 @@ import { ResidentsComponent } from '../src/app/navbar/residents/residents.compon
 import { FloorplansComponent } from '../src/app/navbar/floorplans/floorplans.component';
 import { ContactusComponent } from '../src/app/navbar/contactus/contactus.component';
 import { DirectionsComponent } from '../src/app/navbar/directions/directions.component';
+import { provideHttpClient } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: BackgroundComponent },
@@ -30,5 +31,5 @@ const routes: Routes = [
   
 ];
 
-bootstrapApplication(AppComponent, { providers: [provideRouter(routes)]})
+bootstrapApplication(AppComponent, { providers: [provideHttpClient(),provideRouter(routes)]})
   .catch((err) => console.error(err));

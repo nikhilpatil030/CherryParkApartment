@@ -7,7 +7,7 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
 import { GalleriaModule} from 'primeng/galleria';
-import { error } from 'console';
+import { LoggerService } from '../../services/logger/logger.service';
 
 var serverConfig =  require ("../../../config/serverConfig.json");
 var residentsConfig = require ("./residentsConfig.json");
@@ -23,7 +23,7 @@ export class ResidentsComponent {
 
   loginForm: FormGroup ;
 
-  constructor(private http: HttpClient, private fb: FormBuilder) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private logger: LoggerService) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -39,8 +39,10 @@ export class ResidentsComponent {
     if (this.loginForm.valid) {
       // Simulate a login service
       this.http.post(serverConfig.serverApi + residentsConfig.verifyResident,this.loginForm.value).subscribe(res => {
+        this.logger.info('residents','Login successful : ' + JSON.stringify(res));
         alert('Login successful : ' + JSON.stringify(res));
       },error => {
+        this.logger.error('residents','Invalid credentials : ' + JSON.stringify(error) );
         alert('Invalid credentials : ' + JSON.stringify(error) );
       });
     }

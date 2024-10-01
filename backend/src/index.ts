@@ -10,6 +10,9 @@ import { connectDatabase } from './database/databaseConnection';
 import residentsRoutes from './routes/residentsRoutes';
 import floorPlanRoutes from './routes/floorPlanRoutes';
 
+//import route component
+import logsController from './controllers/logs/logsController'
+
 // Create an Express application
 var app = Express();
 // Enable CORS for the API
@@ -20,6 +23,9 @@ app.use(Express.json());
 //mount routes
 app.use('/residents', residentsRoutes)
 app.use('/floorPlan', floorPlanRoutes)
+
+//logs controller route
+app.use('/logs', logsController)
 
 // Start the server
 app.listen(config.expressPort, async () => {
