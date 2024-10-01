@@ -22,13 +22,6 @@ export class FloorplansComponent {
 
   floorPlans: any;
 
-  plans: any[] = [
-    { Bedrooms: '1 Bedroom' },
-    { Bedrooms: '2 Bedrooms' },
-    { Bedrooms: '3 Bedrooms' }
-  ];
-  selectedCity: string = '1 Bedroom';
-
   ngOnInit(): void {
     this.http.get(serverConfig.serverApi + floorPlansConfig.getAllFloorPlans).subscribe(res => {
       this.floorPlans = (res as { data: any })["data"];
