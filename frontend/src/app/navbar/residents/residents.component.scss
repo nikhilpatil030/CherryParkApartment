@@ -22,9 +22,9 @@
 }
   
 .login-card {
-    width: 500px;
+    width: 400px;
 }
-  
+
 .p-field {
     width: 100%; /* Make the input field take up full width of the parent */
     padding: 10px; /* Add padding inside the input field */
@@ -34,8 +34,22 @@
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     font-size: 16px; /* Set font size */
 }
+
+.input-field{
+    width: 80%;
+}
   
 .error-message {
     color: red;
     font-size: 0.85em;
+}
+
+.vertical-line {
+    border-left: 2px solid gray; /* The vertical line */
+    height: 200px; /* Adjust the height */
+    margin: 0 5px; /* Optional: spacing around the line */
+}
+
+.register-card {
+    width: 500px;
 }

@@ -38,3 +38,15 @@ export function findOne(collectionName:string, query:any):Promise<any> {
         });
     })
 }
+
+export function insertOne(collectionName:string, data:any):Promise<any> {
+    return new Promise((resolve, reject) => {
+        database.collection(collectionName).updateOne(data.filter, data.update, data.options).then((result: any) => {
+            if (!result) reject("not able to insert in db");
+            resolve(result);
+        }).catch((err: any) => {
+            console.log(" err: " + JSON.stringify(err) );
+            reject(" err: " + JSON.stringify(err) );
+        });
+    })
+}

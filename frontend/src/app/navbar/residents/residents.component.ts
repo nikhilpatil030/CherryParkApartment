@@ -22,17 +22,38 @@ var residentsConfig = require ("./residentsConfig.json");
 export class ResidentsComponent {
 
   loginForm: FormGroup ;
+  registerForm: FormGroup;
 
   constructor(private http: HttpClient, private fb: FormBuilder, private logger: LoggerService) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    this.registerForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      email: ['', Validators.required],
+      personalIdentification: ['', Validators.required]
+    });
   }
 
   backgroundImageUrl: any;
   ngOnInit(): void {
     this.backgroundImageUrl = residentsConfig.backgroundImageUrl
+  }
+
+  onRegister() {
+    if (this.registerForm.valid) {
+      // Simulate a register service
+      this.http.post(serverConfig.serverApi + residentsConfig.registerResident,this.registerForm.value).subscribe(res => {
+        this.logger.info('residents','Register successful : ' + JSON.stringify(res));
+        alert('Register successful : ' + JSON.stringify(res));
+      },error => {
+        this.logger.error('residents','Error while registering: ' + JSON.stringify(error) );
+        alert('Error while registering: ' + JSON.stringify(error) );
+      });
+    }
   }
 
   onSubmit() {
