@@ -14,6 +14,8 @@ import floorPlanRoutes from './routes/floorPlanRoutes';
 
 //import route component
 import logsController from './controllers/logs/logsController'
+import winstonLoggerController from './controllers/logs/winstonLoggerController'
+const logger = winstonLoggerController('index');
 
 // Create an Express application
 var app = Express();
@@ -40,7 +42,11 @@ const httpsServer = https.createServer(options, app);
 
 // Start the server
 httpsServer.listen(config.expressPort, async () => {
-    console.log('Server is running on port ' + config.expressPort);
-    connectDatabase();
+    try {
+        logger.info('Server is running on port ' + config.expressPort);
+        connectDatabase();
+    } catch (error) {
+        logger.error('Error starting server: ' + error);
+    }
 })
 
