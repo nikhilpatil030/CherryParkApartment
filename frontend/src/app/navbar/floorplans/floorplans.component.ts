@@ -25,6 +25,7 @@ export class FloorplansComponent {
 
   ngOnInit(): void {
     this.http.get(serverConfig.serverApi + floorPlansConfig.getAllFloorPlans).subscribe(res => {
+      this.logger.info("floorplans","getAllFloorPlans: " + JSON.stringify(res) );
       this.floorPlans = (res as { data: any })["data"];
     }, error => {
       this.logger.error("floorplans","getAllFloorPlans error: " + JSON.stringify(error) );
