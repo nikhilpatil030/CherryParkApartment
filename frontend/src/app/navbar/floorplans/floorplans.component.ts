@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { LoggerService } from '../../services/logger/logger.service';
 
 var serverConfig =  require ("../../../config/serverConfig.json");
 var floorPlansConfig = require ("./floorplansConfig.json");
@@ -18,7 +19,7 @@ var floorPlansConfig = require ("./floorplansConfig.json");
 })
 export class FloorplansComponent {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private logger: LoggerService) {}
 
   floorPlans: any;
 
@@ -26,7 +27,7 @@ export class FloorplansComponent {
     this.http.get(serverConfig.serverApi + floorPlansConfig.getAllFloorPlans).subscribe(res => {
       this.floorPlans = (res as { data: any })["data"];
     }, error => {
-      console.log("getAllFloorPlans error: " + JSON.stringify(error) );
+      this.logger.error("floorplans","getAllFloorPlans error: " + JSON.stringify(error) );
     })
   }
 
