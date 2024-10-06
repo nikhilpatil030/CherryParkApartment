@@ -70,7 +70,7 @@ export class ResidentsComponent {
         }
       },error => {
         this.logger.error('residents','Invalid credentials : ' + JSON.stringify(error) );
-        alert('Invalid credentials : ' + JSON.stringify(error) );
+        alert('Invalid Credentials');
       });
     }
   }

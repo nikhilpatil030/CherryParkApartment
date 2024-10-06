@@ -1,7 +1,15 @@
-
-
 <p-card  header="Profile" styleClass="custom-card responsive-card">
+   
     <ng-template pTemplate="header">
+        <div class="header-container">
+            <h2 class="custom-username">Hello , {{ loggedInResidentData?.username || 'N/A' }}</h2>
+            <div class="vertical-navbar">
+                <button class="navbar-toggler" (click)="toggleMenu()">
+                <i [ngClass]="isMenuVisible ? 'pi pi-times' : 'pi pi-bars'"></i>
+                </button>
+                <p-panelMenu *ngIf="isMenuVisible" [model]="items" class="custom-panelmenu"></p-panelMenu>
+            </div>
+        </div>
         <h2> Welcome to the Cherry Park Resident Portal</h2>
         <p>Welcome home! At Cherry Park Apartments in Englewood, CO, we are dedicated to making your living experience as seamless and enjoyable as possible. Our Resident Portal is designed to provide you with convenient access to all the services and resources you need. Here, you can easily pay rent, submit maintenance requests, and stay updated on community news and events. We're thrilled to have you as part of our community and are here to support you every step of the way. If you have any questions or need assistance, please don't hesitate to reach out. Enjoy your stay at Avery Park!</p>
     </ng-template>
