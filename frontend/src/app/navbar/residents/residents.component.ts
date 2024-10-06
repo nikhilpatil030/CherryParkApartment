@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
 import { GalleriaModule} from 'primeng/galleria';
 import { LoggerService } from '../../services/logger/logger.service';
+import { Router } from '@angular/router';
 
 var serverConfig =  require ("../../../config/serverConfig.json");
 var residentsConfig = require ("./residentsConfig.json");
@@ -24,7 +25,7 @@ export class ResidentsComponent {
   loginForm: FormGroup ;
   registerForm: FormGroup;
 
-  constructor(private http: HttpClient, private fb: FormBuilder, private logger: LoggerService) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private logger: LoggerService, private router: Router) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -59,9 +60,14 @@ export class ResidentsComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       // Simulate a login service
-      this.http.post(serverConfig.serverApi + residentsConfig.verifyResident,this.loginForm.value).subscribe(res => {
+      this.http.post(serverConfig.serverApi + residentsConfig.verifyResident,this.loginForm.value).subscribe((res:any) => {
         this.logger.info('residents','Login successful : ' + JSON.stringify(res));
-        alert('Login successful : ' + JSON.stringify(res));
+        if (res.token) {
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/residentsLoginWelcome']);
+        }else{
+          this.logger.info('residents','Token not found for login');
+        }
       },error => {
         this.logger.error('residents','Invalid credentials : ' + JSON.stringify(error) );
         alert('Invalid credentials : ' + JSON.stringify(error) );

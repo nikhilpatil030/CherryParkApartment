@@ -1,0 +1,31 @@
+
+
+<p-card  header="Profile" styleClass="custom-card responsive-card">
+    <ng-template pTemplate="header">
+        <h2> Welcome to the Cherry Park Resident Portal</h2>
+        <p>Welcome home! At Cherry Park Apartments in Englewood, CO, we are dedicated to making your living experience as seamless and enjoyable as possible. Our Resident Portal is designed to provide you with convenient access to all the services and resources you need. Here, you can easily pay rent, submit maintenance requests, and stay updated on community news and events. We're thrilled to have you as part of our community and are here to support you every step of the way. If you have any questions or need assistance, please don't hesitate to reach out. Enjoy your stay at Avery Park!</p>
+    </ng-template>
+  
+    <div class="p-grid p-dir-col p-align-center custom-content">
+        <div class="p-col">
+            <p><i class="pi pi-user"></i>&nbsp;&nbsp; User Name: <strong>{{ loggedInResidentData?.username || 'N/A' }}</strong></p>
+        </div>
+        <div class="p-col">
+            <p><i class="pi pi-key"></i>&nbsp;&nbsp; Apartment Number: <strong>Unit#{{ loggedInResidentData?.apartmentNo || 'N/A' }}</strong></p>
+        </div>
+        <div class="p-col">
+            <p><i class="pi pi-envelope"></i>&nbsp;&nbsp; Email: <strong>{{ loggedInResidentData?.email || 'N/A'  }}</strong></p>
+        </div>
+        <div class="p-col">
+            <p><i class="pi pi-id-card"></i>&nbsp;&nbsp; Personal Identification: <strong>{{ loggedInResidentData?.personalIdentification || 'N/A'  }}</strong></p>
+        </div>
+        <div class="p-col">
+            <p><i class="pi pi-calendar"></i>&nbsp;&nbsp; Year Of Enrollment<strong>{{ loggedInResidentData?.yearOfEnrollment || 'N/A'  }}</strong></p>
+        </div>  
+    </div>
+
+    <div class="button-container"> 
+        <button pButton type="button" label="Logout" icon="pi pi-sign-out" class="p-button-secondary" (click)="logout()"></button>
+    </div>
+</p-card>
+

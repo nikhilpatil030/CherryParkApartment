@@ -2,10 +2,13 @@ import { Request, Response } from 'express';
 
 import { findAll , findOne, insertOne} from '../../database/databaseConnection';
 import { bcryptPassword, comparePassword } from '../../controllers/security/bcryptController';
+import { filterResidentData } from './residentDataController';
+
 import winstonLogger from '../../controllers/logs/winstonLoggerController';
 const logger = winstonLogger('residentController');
 
 var databaseConfig = require('../../../config/databaseConfig.json');
+const jwt = require('jsonwebtoken');
 
 // Get all residents
 export const getAllResidents = (req: Request, res: Response): void => {
@@ -40,7 +43,9 @@ export const verifyResident = (req: Request, res: Response): void => {
         logger.info("findOne success in verifyResident");
         comparePassword (req.body.password, result.password).then((isMatch: any) => {
             if (isMatch) {
-                res.status(200).json({message: 'resident verified successfully',data: result});
+                let data = filterResidentData(result)
+                const token = jwt.sign(data, 'secretKey', { expiresIn: '5m' });
+                res.status(200).json({message: 'resident verified successfully', token: token});
             }else{
                 res.status(401).json({message: 'Invalid password'});
             }

@@ -13,6 +13,7 @@ import { ResidentsComponent } from '../src/app/navbar/residents/residents.compon
 import { FloorplansComponent } from '../src/app/navbar/floorplans/floorplans.component';
 import { ContactusComponent } from '../src/app/navbar/contactus/contactus.component';
 import { DirectionsComponent } from '../src/app/navbar/directions/directions.component';
+import { ResidentsLoginWelcomeComponent } from '../src/app/navbar/residents/residents-login-welcome/residents-login-welcome.component';
 import { provideHttpClient } from '@angular/common/http';
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'floorplans', component: FloorplansComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: 'directions', component: DirectionsComponent },
+  { path: 'residentsLoginWelcome', component: ResidentsLoginWelcomeComponent }
   
 ];
 
