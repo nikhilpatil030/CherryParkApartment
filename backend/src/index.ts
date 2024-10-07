@@ -37,6 +37,14 @@ app.use('/floorPlan', floorPlanRoutes)
 //logs controller route
 app.use('/logs', logsController)
 
+// cache control
+app.use((req: any, res: any, next: any) => {
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '0');
+    res.header('Pragma', 'no-cache');
+    next();
+});
+
 //read SSL certificate
 const options = {
     key: fs.readFileSync('server.key', 'utf8'),

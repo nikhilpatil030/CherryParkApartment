@@ -15,6 +15,7 @@ import { ContactusComponent } from '../src/app/navbar/contactus/contactus.compon
 import { DirectionsComponent } from '../src/app/navbar/directions/directions.component';
 import { ResidentsLoginWelcomeComponent } from '../src/app/navbar/residents/residents-login-welcome/residents-login-welcome.component';
 import { provideHttpClient } from '@angular/common/http';
+import { noCacheGuard } from './app/Guards/noCache/no-cache.guard';
 
 const routes: Routes = [
   { path: '', component: BackgroundComponent },
@@ -25,11 +26,11 @@ const routes: Routes = [
   { path: 'photogallery', component: PhotogalleryComponent },
   { path: 'reviews', component: ReviewsComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'residents', component: ResidentsComponent },
+  { path: 'residents', component: ResidentsComponent, canActivate: [noCacheGuard] },
   { path: 'floorplans', component: FloorplansComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: 'directions', component: DirectionsComponent },
-  { path: 'residentsLoginWelcome', component: ResidentsLoginWelcomeComponent }
+  { path: 'residentsLoginWelcome', component: ResidentsLoginWelcomeComponent, canActivate: [noCacheGuard] }
   
 ];
 

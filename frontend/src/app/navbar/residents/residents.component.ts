@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { GalleriaModule} from 'primeng/galleria';
 import { LoggerService } from '../../services/logger/logger.service';
 import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
 
 var serverConfig =  require ("../../../config/serverConfig.json");
 var residentsConfig = require ("./residentsConfig.json");
@@ -47,7 +48,12 @@ export class ResidentsComponent {
   onRegister() {
     if (this.registerForm.valid) {
       // Simulate a register service
-      this.http.post(serverConfig.serverApi + residentsConfig.registerResident,this.registerForm.value).subscribe(res => {
+      const headers = new HttpHeaders({
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      });
+      this.http.post(serverConfig.serverApi + residentsConfig.registerResident,this.registerForm.value,{headers}).subscribe(res => {
         this.logger.info('residents','Register successful : ' + JSON.stringify(res));
         alert('Register successful : ' + JSON.stringify(res));
       },error => {
@@ -60,7 +66,12 @@ export class ResidentsComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       // Simulate a login service
-      this.http.post(serverConfig.serverApi + residentsConfig.verifyResident,this.loginForm.value).subscribe((res:any) => {
+      const headers = new HttpHeaders({
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      });
+      this.http.post(serverConfig.serverApi + residentsConfig.verifyResident,this.loginForm.value,{headers}).subscribe((res:any) => {
         this.logger.info('residents','Login successful : ' + JSON.stringify(res));
         if (res.token) {
           localStorage.setItem('token', res.token);
