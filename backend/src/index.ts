@@ -3,6 +3,8 @@ var Express = require('express');
 var cors = require('cors');
 const fs = require('fs');
 const https = require('https');
+const morgan = require('morgan');
+const path = require('path');
 
 //import config files
 var config = require('../config/indixConfig.json');
@@ -23,6 +25,10 @@ var app = Express();
 app.use(cors());
 // Middleware to parse incoming JSON requests
 app.use(Express.json());
+
+// API's logger
+const logStream = fs.createWriteStream(path.join(__dirname, '../logs/API.log'), { flags: 'a' });
+app.use(morgan('combined', { stream: logStream }));
 
 //mount routes
 app.use('/residents', residentsRoutes)
