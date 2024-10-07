@@ -21,6 +21,10 @@ export class ResidentsLoginWelcomeComponent {
   loggedInResidentData: any;
   isMenuVisible = false;
   ngOnInit(): void {
+    window.addEventListener('popstate', () => {
+      localStorage.removeItem('token');
+      this.router.navigate(['/residents']);
+    });
     this.route.queryParams.subscribe(() => {
       const token = localStorage.getItem('token');
       if (token) { 
