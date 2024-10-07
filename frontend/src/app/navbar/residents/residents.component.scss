@@ -5,51 +5,76 @@
     height: 80vh; /* Full height of the viewport */
     margin : 0;
     width: 100%;
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.center-heading{
-    display: flex;
-    justify-content: center;
-    align-items: center;;
-    margin: 0;
-}
-
-.login-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 80px;
+.center-heading {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
 }
   
+.login-page-container {
+    max-width: 1000px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 60%;
+}
+  
+.login-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
 .login-card {
-    width: 400px;
+    flex : 1;
 }
-
+  
 .p-field {
-    width: 100%; /* Make the input field take up full width of the parent */
-    padding: 10px; /* Add padding inside the input field */
-    margin: 10px 0; /* Add space above and below the input */
-    border: 1px solid #ccc; /* Add a light border */
-    border-radius: 4px; /* Slightly round the corners */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    font-size: 16px; /* Set font size */
+    margin-bottom: 15px;
 }
-
-.input-field{
-    width: 80%;
+  
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
   
 .error-message {
     color: red;
-    font-size: 0.85em;
+    font-size: 12px;
 }
-
+  
+.login-btn, .signup-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+  
+.separator {
+    text-align: center;
+    margin: 20px 0;
+}
+  
+.separator span {
+    background-color: white;
+    padding: 0 10px;
+}
+  
 .vertical-line {
-    border-left: 2px solid gray; /* The vertical line */
-    height: 200px; /* Adjust the height */
-    margin: 0 5px; /* Optional: spacing around the line */
+    border-left: 2px solid #ccc;
+    height: 100%;
 }
-
+  
 .register-card {
-    width: 500px;
+    flex : 1;
 }
