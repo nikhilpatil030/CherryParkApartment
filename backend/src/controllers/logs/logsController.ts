@@ -6,7 +6,7 @@ const router = Router();
 
 function logToFile(req: any, res: any) {
     var fileName = req.body.module;
-    fs.appendFile('logs/' + fileName + '.txt', JSON.stringify(req.body.message) + '\n', function (err: any) {
+    fs.appendFile('logs/frontendLogs/' + fileName + '.txt', JSON.stringify(req.body.message) + '\n', function (err: any) {
         if (err) {
             res.status(500).send({message:'Error adding logs'+err});
         }else{

@@ -69,12 +69,13 @@ strong {
   
 /* Toggler button */
 .navbar-toggler {
-    background: white;
+    background: black;
     border: none;
     font-size: 1.2em;
     cursor: pointer;
     margin-bottom: 10px;
     justify-content: flex-end;
+    color: white;
 }
 
 .custom-panelmenu {
