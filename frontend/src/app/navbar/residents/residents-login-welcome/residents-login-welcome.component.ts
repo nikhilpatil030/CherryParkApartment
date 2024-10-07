@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/Authorization/auth.service';
 import { PanelMenuModule } from  'primeng/panelmenu';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-residents-login-welcome',
@@ -16,17 +17,17 @@ import { PanelMenuModule } from  'primeng/panelmenu';
 })
 export class ResidentsLoginWelcomeComponent {
    
-  constructor(private route: ActivatedRoute , private router: Router, private authService: AuthService) {}
+  constructor(private route: ActivatedRoute , private router: Router, private authService: AuthService, private cookieService: CookieService) {}
 
   loggedInResidentData: any;
   isMenuVisible = false;
   ngOnInit(): void {
     window.addEventListener('popstate', () => {
-      localStorage.removeItem('token');
+      this.cookieService.delete('token');
       this.router.navigate(['/residents']);
     });
     this.route.queryParams.subscribe(() => {
-      const token = localStorage.getItem('token');
+      const token = this.cookieService.get('token');
       if (token) { 
         this.loggedInResidentData = this.authService.decodeToken(token);
       }else{
@@ -64,7 +65,7 @@ export class ResidentsLoginWelcomeComponent {
   }
 
   logout() {
-    localStorage.removeItem('token');
+    this.cookieService.delete('token');
     this.router.navigate(['/residents']);
   }
 }
