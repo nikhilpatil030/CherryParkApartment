@@ -60,6 +60,7 @@ export class ResidentsLoginWelcomeComponent {
   }
 
   logout() {
+    localStorage.removeItem('token');
     this.router.navigate(['/residents']);
   }
 }
