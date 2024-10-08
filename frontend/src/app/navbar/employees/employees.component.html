@@ -1,0 +1,32 @@
+<!-- Employee Login -->
+<div class="background_employee" [ngStyle]="{'background-image': 'url(' + backgroundImageUrl + ')'}">
+<div class="employee-login-container">
+<p-card header="Employee Login" styleClass="employee-login-card" >
+    <form [formGroup]="employeeLoginForm" (ngSubmit)="onSubmit()">
+        <div class="p-field">
+            <label for="empUsername"><i class="pi pi-user"></i></label>
+            <input class="input-field" id="empUsername" pInputText formControlName="username" placeholder="Employee Username" />
+            <div *ngIf="employeeLoginForm.controls['username'].invalid && employeeLoginForm.controls['username'].touched" class="error-message">
+              Username is required.
+            </div>
+        </div>
+
+        <div class="p-field">
+            <label for="empPassword"><i class="pi pi-lock"></i></label>
+            <input class="input-field" id="empPassword" pPassword formControlName="password" placeholder="Employee Password" />
+            <div *ngIf="employeeLoginForm.controls['password'].invalid && employeeLoginForm.controls['password'].touched" class="error-message">
+              Password is required.
+            </div>
+        </div>
+
+        <div class="button-container">
+            <p-button label="Employee Login" type="submit" [disabled]="employeeLoginForm.invalid"></p-button>
+        </div>
+
+        <div><a class="forgot-password" routerLink="/forgot-password">Forgot Password?</a></div>
+        <div><a class="register-employee-link" routerLink="/employeeLoggedIn">New Employee? Sign Up?</a></div>
+    </form>
+</p-card>
+</div>
+</div>
+

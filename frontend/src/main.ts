@@ -9,6 +9,7 @@ import { BackgroundComponent } from '../src/app/navbar/background/background.com
 import { VisitorinfoComponent } from '../src/app/navbar/home/visitorinfo/visitorinfo.component';
 import { PhotogalleryComponent } from '../src/app/navbar/home/photogallery/photogallery.component';
 import { ReviewsComponent } from '../src/app/navbar/home/reviews/reviews.component';
+import { EmployeesComponent } from '../src/app/navbar/employees/employees.component';
 import { ResidentsComponent } from '../src/app/navbar/residents/residents.component';
 import { FloorplansComponent } from '../src/app/navbar/floorplans/floorplans.component';
 import { ContactusComponent } from '../src/app/navbar/contactus/contactus.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'photogallery', component: PhotogalleryComponent },
   { path: 'reviews', component: ReviewsComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'employees', component: EmployeesComponent, canActivate: [noCacheGuard] },
   { path: 'residents', component: ResidentsComponent, canActivate: [noCacheGuard] },
   { path: 'floorplans', component: FloorplansComponent },
   { path: 'contactus', component: ContactusComponent },
