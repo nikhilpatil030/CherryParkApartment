@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewEncapsulation } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { InputIconModule } from 'primeng/inputicon';
@@ -8,7 +8,8 @@ import { InputIconModule } from 'primeng/inputicon';
   standalone: true,
   imports: [MenubarModule,InputIconModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
+  encapsulation: ViewEncapsulation.None // Disables encapsulation
 })
 export class NavbarComponent implements OnInit {
   items: MenuItem[] | undefined;
