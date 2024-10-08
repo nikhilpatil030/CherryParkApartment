@@ -1,71 +1,83 @@
 
 
 <div class="background_residents" [ngStyle]="{'background-image': 'url(' + backgroundImageUrl + ')'}">
-  <div class="login-page-container">
-    <h1 class="center-heading">Welcome to CherryPark</h1>
-
-    <div class="login-container" >
-      <p-card header="Resident Login" class="login-card">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
-          <div class="p-field">
-            <label for="username"><i class="pi pi-user"></i></label>
-            <input class="input-field" id="username" pInputText formControlName="username" placeholder="Enter your username" />
-            <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched" class="error-message">
-              Username is required.
+  <div class="resident-page-container">
+    <!--<h1 class="center-heading">Welcome to CherryPark</h1>-->
+    
+    <div class="login-registers-container" >
+      <!-- Resident Login -->
+      <div class="login-card-container">
+        <div class="circle"><i class="pi pi-user" style="font-size: 40px; color: white;"></i></div>
+        <p-card header="Resident Login" styleClass="login-card" >
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
+            <div class="p-field">
+              <label for="username"><i class="pi pi-users"></i></label>
+              <input class="input-field" id="username" pInputText formControlName="username" placeholder="Enter your username" />
+              <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched" class="error-message">
+                Username is required.
+              </div>
             </div>
-          </div>
 
-          <div class="p-field">
-            <label for="password"><i class="pi pi-lock"></i></label>
-            <input class="input-field" id="password" pPassword formControlName="password" placeholder="Enter your password" />
-            <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error-message">
-              Password is required.
+            <div class="p-field">
+              <label for="password"><i class="pi pi-lock"></i></label>
+              <input class="input-field" id="password" pPassword formControlName="password" placeholder="Enter your password" />
+              <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error-message">
+                Password is required.
+              </div>
             </div>
-          </div>
 
-          <p-button label="Login" class="login-btn" type="submit" [disabled]="loginForm.invalid"></p-button>
-        </form>
-      </p-card>
+            <p-button label="Login" styleClass="login-btn" type="submit" [disabled]="loginForm.invalid"></p-button>
 
+            <div><a class="forgot-password" routerLink="/forgot-password">Forgot Password?</a></div>
+          </form>
+        </p-card>
+      </div>
+
+      <!-- Separator -->
       <div class="separator"><span>OR</span></div>
 
-      <p-card header="New Resident? Sign Up" class="register-card">
-        <form [formGroup]="registerForm" (ngSubmit)="onRegister()" autocomplete="off">
-          <div class="p-field">
-            <label for="username"><i class="pi pi-user"></i></label>
-            <input class="input-field" id="username" pInputText formControlName="username" placeholder="Choose a username" />
-            <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched" class="error-message">
-              Username is required.
+      <!-- New Resident Sign Up -->
+      <div class="register-card-container">
+        <div class="circle"><i class="pi pi-user" style="font-size: 40px; color: white;"></i></div>
+        <p-card header="New Resident? Sign Up" styleClass="register-card">
+          <form [formGroup]="registerForm" (ngSubmit)="onRegister()" autocomplete="off">
+            <div class="p-field">
+              <label for="username"><i class="pi pi-users"></i></label>
+              <input class="input-field" id="username" pInputText formControlName="username" placeholder="Choose a username" />
+              <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched" class="error-message">
+                Username is required.
+              </div>
             </div>
-          </div>
 
-          <div class="p-field">
-            <label for="password"><i class="pi pi-lock"></i></label>
-            <input class="input-field" id="password" pPassword formControlName="password" placeholder="Create a password" />
-            <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="error-message">
-              Password is required.
+            <div class="p-field">
+              <label for="password"><i class="pi pi-lock"></i></label>
+              <input class="input-field" id="password" pPassword formControlName="password" placeholder="Create a password" />
+              <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="error-message">
+                Password is required.
+              </div>
             </div>
-          </div>
 
-          <div class="p-field">
-            <label for="email"><i class="pi pi-envelope"></i></label>
-            <input class="input-field" id="email" pInputText formControlName="email" placeholder="Enter your email" />
-            <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="error-message">
-              Email is required.
+            <div class="p-field">
+              <label for="email"><i class="pi pi-envelope"></i></label>
+              <input class="input-field" id="email" pInputText formControlName="email" placeholder="Enter your email" />
+              <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="error-message">
+                Email is required.
+              </div>
             </div>
-          </div>
 
-          <div class="p-field">
-            <label for="personalIdentification"><i class="pi pi-id-card"></i></label>
-            <input class="input-field" id="personalIdentification" pInputText formControlName="personalIdentification" placeholder="Enter your Personal ID" />
-            <div *ngIf="registerForm.controls['personalIdentification'].invalid && registerForm.controls['personalIdentification'].touched" class="error-message">
-              Personal Identification is required.
+            <div class="p-field">
+              <label for="personalIdentification"><i class="pi pi-id-card"></i></label>
+              <input class="input-field" id="personalIdentification" pInputText formControlName="personalIdentification" placeholder="Enter your Personal ID" />
+              <div *ngIf="registerForm.controls['personalIdentification'].invalid && registerForm.controls['personalIdentification'].touched" class="error-message">
+                Personal Identification is required.
+              </div>
             </div>
-          </div>
 
-          <p-button label="Sign Up" class="signup-btn" type="submit" [disabled]="registerForm.invalid"></p-button>
-        </form>
-      </p-card>
+            <p-button label="Sign Up" styleClass="signup-btn" type="submit" [disabled]="registerForm.invalid"></p-button>
+          </form>
+        </p-card>
+      </div>
+
     </div>
   </div>
 </div>

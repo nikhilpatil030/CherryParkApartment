@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -20,7 +20,8 @@ var residentsConfig = require ("./residentsConfig.json");
   standalone: true,
   imports: [HttpClientModule,CardModule,FormsModule,ReactiveFormsModule,ButtonModule,CommonModule,GalleriaModule],
   templateUrl: './residents.component.html',
-  styleUrl: './residents.component.scss'
+  styleUrl: './residents.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class ResidentsComponent {
 

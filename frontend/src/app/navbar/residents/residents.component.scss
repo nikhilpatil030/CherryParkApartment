@@ -12,14 +12,7 @@
     justify-content: center;
 }
 
-.center-heading {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
-}
-  
-.login-page-container {
+.resident-page-container {
     max-width: 1000px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.85);
@@ -28,18 +21,44 @@
     width: 60%;
 }
   
-.login-container {
+.login-registers-container {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    padding-top: 20px;
+}
+
+
+.login-card-container {
+    flex: 1;
+    position: relative;
+    //width: 350px;  
+    margin: 0 auto;
+}
+
+.circle {
+    position: absolute;
+    top: -30px;  /* Move half of the circle above the card */
+    left: 50%;
+    transform: translateX(-50%); /* Center the circle */
+    width: 60px;
+    height: 60px;
+    background-color:  #87CEFA;  /* Customize circle color */
+    border-radius: 50%;  /* Make the div a circle */
+    z-index: 1;  /* Ensure the circle is above the card */
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
 }
 
 .login-card {
-    flex : 1;
+    padding-top: 40PX;
+    position: relative;
 }
   
 .p-field {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
   
 .input-field {
@@ -54,20 +73,24 @@
     font-size: 12px;
 }
   
-.login-btn, .signup-btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
+.login-btn {
+    text-align: center;
+    margin-bottom: 20px;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center;
 }
   
 .separator {
     text-align: center;
     margin: 20px 0;
+    margin-top: 210px;
 }
   
 .separator span {
     background-color: white;
     padding: 0 10px;
+    margin-top: 80px;
 }
   
 .vertical-line {
@@ -76,5 +99,13 @@
 }
   
 .register-card {
-    flex : 1;
+    padding-top: 40px;
+    position: relative;
+}
+
+.register-card-container {
+    flex: 1;
+    position: relative;
+    //width: 350px;  
+    margin: 0 auto;
 }
