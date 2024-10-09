@@ -8,11 +8,23 @@
 }
 
 .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-left: auto;
     margin-right: 40px;
 }
 
+.logo-container i {
+    font-size: 3.5rem;
+    margin-bottom: -3.50rem;
+    color: #1abc9c; /* Customize the color */
+    margin-left: 45px;
+}
+
 .custom-logo-text {
+    margin-top: 0;
     font-family: 'Lobster', cursive; /* Example of a stylish font */
     font-size: 3rem; /* Adjust the size as needed */
     color: #1abc9c; /* Customize the color */
