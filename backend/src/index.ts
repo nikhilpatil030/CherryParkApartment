@@ -13,6 +13,7 @@ var config = require('../config/indixConfig.json');
 import { connectDatabase } from './database/databaseConnection';
 import residentsRoutes from './routes/residentsRoutes';
 import floorPlanRoutes from './routes/floorPlanRoutes';
+import employeesRoutes from './routes/employeesRoutes'
 
 //import route component
 import logsController from './controllers/logs/logsController'
@@ -31,6 +32,7 @@ const logStream = fs.createWriteStream(path.join(__dirname, '../logs/API.log'), 
 app.use(morgan('combined', { stream: logStream }));
 
 //mount routes
+app.use('/employees', employeesRoutes)
 app.use('/residents', residentsRoutes)
 app.use('/floorPlan', floorPlanRoutes)
 
