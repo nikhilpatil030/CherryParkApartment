@@ -15,6 +15,7 @@ import { FloorplansComponent } from '../src/app/navbar/floorplans/floorplans.com
 import { ContactusComponent } from '../src/app/navbar/contactus/contactus.component';
 import { DirectionsComponent } from '../src/app/navbar/directions/directions.component';
 import { ResidentsLoginWelcomeComponent } from '../src/app/navbar/residents/residents-login-welcome/residents-login-welcome.component';
+import { EmployeeLoggedInComponent } from '../src/app/navbar/employees/employee-logged-in/employee-logged-in.component';
 import { provideHttpClient } from '@angular/common/http';
 import { noCacheGuard } from './app/Guards/noCache/no-cache.guard';
 
@@ -32,8 +33,8 @@ const routes: Routes = [
   { path: 'floorplans', component: FloorplansComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: 'directions', component: DirectionsComponent },
-  { path: 'residentsLoginWelcome', component: ResidentsLoginWelcomeComponent, canActivate: [noCacheGuard] }
-  
+  { path: 'residentsLoginWelcome', component: ResidentsLoginWelcomeComponent, canActivate: [noCacheGuard] },
+  { path: 'employeeLoggedIn', component: EmployeeLoggedInComponent, canActivate: [noCacheGuard] }
 ];
 
 bootstrapApplication(AppComponent, { providers: [provideHttpClient(),provideRouter(routes)]})

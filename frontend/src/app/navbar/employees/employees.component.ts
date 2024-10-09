@@ -51,7 +51,7 @@ export class EmployeesComponent {
         this.logger.info('employees','Login successful for employees : ' + JSON.stringify(res));
         if (res.token) {
           this.cookieService.set('employee-token', res.token, 1);
-          this.router.navigate(['/employeeLoogedIn']);
+          this.router.navigate(['/employeeLoggedIn']);
         }else{
           this.logger.info('employees','Token not found for employees login');
         }
