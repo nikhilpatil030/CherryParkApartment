@@ -18,12 +18,31 @@
   background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  top: -30px;  /* Move half of the circle above the card */
+  left: 50%;
+  transform: translateX(-50%); /* Center the circle */
+  width: 60px;
+  height: 60px;
+  background-color:  #87CEFA;  /* Customize circle color */
+  border-radius: 50%;  /* Make the div a circle */
+  z-index: 1;  /* Ensure the circle is above the card */
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
 }
 
 .employee-login-card{
   background-color: linear-gradient(135deg, #424242, #212121);
   height: 400px;
   border-radius: 10px;
+  padding-top: 40px;
+  position: relative;
 }
 
 .p-field {
