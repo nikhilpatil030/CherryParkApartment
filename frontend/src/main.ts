@@ -19,6 +19,9 @@ import { EmployeeLoggedInComponent } from '../src/app/navbar/employees/employee-
 import { provideHttpClient } from '@angular/common/http';
 import { noCacheGuard } from './app/Guards/noCache/no-cache.guard';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { importProvidersFrom } from '@angular/core';
+
 const routes: Routes = [
   { path: '', component: BackgroundComponent },
   { path: 'home', component: BackgroundComponent },
@@ -37,5 +40,5 @@ const routes: Routes = [
   { path: 'employeeLoggedIn', component: EmployeeLoggedInComponent, canActivate: [noCacheGuard] }
 ];
 
-bootstrapApplication(AppComponent, { providers: [provideHttpClient(),provideRouter(routes)]})
+bootstrapApplication(AppComponent, { providers: [provideHttpClient(),provideRouter(routes),importProvidersFrom(BrowserAnimationsModule)] })
   .catch((err) => console.error(err));

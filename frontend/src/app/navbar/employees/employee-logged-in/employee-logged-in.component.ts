@@ -25,7 +25,7 @@ export class EmployeeLoggedInComponent {
 
   allResidents: any;
   maintainanceDetailsDialog: boolean = false;
-  maintainanceDetails: any;
+  maintainanceDetails: any = {};
 
   ngOnInit() {
     this.getMaintenanceRequests();
@@ -83,7 +83,7 @@ export class EmployeeLoggedInComponent {
   }
 
   seeDetails(rowData: any) {
-    this.maintainanceDetails = rowData.Details;
+    this.maintainanceDetails = rowData;
     this.maintainanceDetailsDialog = true;
   }
 }

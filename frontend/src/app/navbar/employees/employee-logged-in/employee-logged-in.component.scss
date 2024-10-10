@@ -145,3 +145,26 @@
 }
 
 /* ###################    end of table section  #################### */
+
+.custom-dialog .p-dialog-header {
+    background-color: #007bff;       /* Custom header background color */
+    color: #fff;                     /* White text for the header */
+    border-radius: 8px 8px 0 0;      /* Rounded corners on top */
+}
+
+.p-dialog-header-close-icon {
+    color: black;
+}
+
+.custom-dialog .p-dialog {
+    border-radius: 8px;              /* Rounded corners for the dialog */
+    box-shadow: 0 8px 16px #ced4da; /* Add shadow for a modern look */
+}
+
+.custom-dialog .p-dialog-content {
+    padding: 20px;                   /* Increase padding for a clean layout */
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* ###################    end of table dialog section  #################### */

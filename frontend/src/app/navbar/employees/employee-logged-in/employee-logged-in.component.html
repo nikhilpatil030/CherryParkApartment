@@ -37,5 +37,14 @@
                 </ng-template>
             </p-table>
         </div>
+        <p-dialog [(visible)]="maintainanceDetailsDialog" [modal]="true" [closable]="true" [header]="'Maintainance Request'" [style]="{'width': '400px'}" styleClass="custom-dialog">
+            <div class="dialog-content">
+                <ul>
+                <li><h4>Priority:</h4> {{maintainanceDetails.priority}}</li>
+                <li><h4>Categary:</h4> {{maintainanceDetails.Category}}</li>
+                <li><h4>Details:</h4> {{maintainanceDetails.Details}}</li>
+                </ul>
+            </div>
+        </p-dialog>
     </div>
 </div>
