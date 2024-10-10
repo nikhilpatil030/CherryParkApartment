@@ -1,0 +1,147 @@
+.employee-container {
+    display: grid;                            /* Set the container as a grid */
+    grid-template-columns: 1fr 7fr;      /* Define column widths  employee-left-container 1fr employee-right-container 6fr*/ 
+    width: 100vw;                             /* Full width */
+}
+
+/* #################################################     start of left navbar  ############################################## */
+
+.employee-left-container {
+    display: grid; 
+    grid-template-rows: 1fr 5fr;
+    height: 80vh;
+    //width: fit-content;
+    background-color: gray;
+}
+
+.home-icon {
+    background-color: gray;
+    display: grid;                
+    place-items: center;  
+}
+
+.home-icon i.pi-home {
+    font-size: 2.8rem;
+    justify-content: center;
+    color: #1abc9c;
+}
+
+.custom-panelmenu {
+    margin-top: 0%;
+    background-color: gray;
+    width: fit-content;
+}
+
+.p-panelmenu-header-content {
+    background-color: gray;
+    border-width: 0px;
+}
+
+.p-panelmenu-header-action {
+    background-color: gray;
+    justify-content: left;
+}
+
+.custom-panelmenu .pi{
+    color:white;
+    font-size: 1.2rem;
+}
+
+.custom-panelmenu .p-menuitem-text {
+    color:white;
+    font-size: 1.2rem;
+}
+
+/* #################################################     end of left navbar  ############################################## */
+
+.employee-right-container {
+    width : 100%;
+}
+
+.content-header-container {
+    display: grid;                            /* Set the container as a grid */
+    grid-template-columns: 1fr 1fr;      /* Define column widths  r*/ 
+    width: 100%; 
+}
+
+.title-container {
+    //background-color: skyblue;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.employee-icon-container{
+    display: flex;
+    grid-template-rows: 1fr 1fr;
+}
+
+.circle {
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background-color:  #87CEFA;  /* Customize circle color */
+    border-radius: 50%;  /* Make the div a circle */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 24px;
+    margin-left: 470px;
+}
+
+.employee-name {
+    margin-top: 32px;
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
+.content-container {
+    margin-top: 25px;
+    margin-left: 12px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+/* ###################    start of table section  #################### */
+
+.custom-table {
+    width: 100%;
+    //border: 1px solid #e0e0e0;   /* Light border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for professionalism */
+    border-radius: 8px;           /* Rounded corners for a modern look */
+    overflow: hidden;             /* Ensures it doesn’t spill out */
+}
+
+.custom-table th, .custom-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;   /* Divider between rows */
+}
+
+.custom-table th {
+    background-color: #f8f9fa;       /* Light gray background for headers */
+    font-weight: bold;
+    font-size: 14px;
+    color: #495057;                  /* Professional dark gray font */
+}
+
+.custom-table td {
+    font-size: 13px;
+    color: #333;
+}
+
+.custom-table tr:nth-child(even) {
+    background-color: #f2f2f2;      /* Alternating row colors */
+}
+
+.custom-table tr:hover {
+    background-color: #e9ecef;      /* Highlight row on hover */
+}
+
+.edit-button {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: skyblue;
+}
+
+/* ###################    end of table section  #################### */

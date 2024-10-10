@@ -1,1 +1,41 @@
-<p>employee-logged-in works!</p>
+<div class="employee-container">
+    <div class="employee-left-container">
+        <div class="home-icon"><i class="pi pi-home"></i></div>
+        <p-panelMenu [model]="items" styleClass="custom-panelmenu"></p-panelMenu>
+    </div>
+    <div class="employee-right-container">
+        <div class="content-header-container">
+            <div class="title-container"> 
+                <h2>Maintainance Requests</h2> 
+            </div>
+            <div class="employee-icon-container">
+                <div class="circle"><i class="pi pi-user" style="font-size: 40px; color: white;"></i></div>
+                <div class="employee-name">Harry Pottor<br>ID: 12345</div>
+            </div>
+        </div>
+        <div class="content-container">
+            <p-table [value]="allResidents" class="custom-table" [paginator]="true" [rows]="6" [resizableColumns]="true" [responsiveLayout]="'scroll'">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pResizableColumn>Username</th>
+                        <th pResizableColumn>Apartment No</th>
+                        <th pResizableColumn>Priority</th>
+                        <th pResizableColumn>Category</th>
+                        <th pResizableColumn>Status</th>
+                        <th pResizableColumn>Details</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData>
+                    <tr>
+                        <td>{{ rowData.username }}</td>
+                        <td>{{ rowData.apartmentNo }}</td>
+                        <td>{{ rowData.priority }}</td>
+                        <td>{{ rowData.Category }}</td>
+                        <td>{{ rowData.status }}</td>
+                        <td><p-button type="button" styleClass="edit-button" (click)="seeDetails(rowData)">See Details</p-button></td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

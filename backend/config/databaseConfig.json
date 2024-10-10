@@ -3,5 +3,6 @@
     "DATABASENAME" : "cherryPark",
     "residentsCollection": "cherryParkResidents",
     "floorPlanCollection": "cherryParkFloorPlans",
-    "employeeCollection" : "cherryParkEmployees"
+    "employeeCollection" : "cherryParkEmployees",
+    "maintenanceRequestCollection" : "maintenanceRequests"
 }

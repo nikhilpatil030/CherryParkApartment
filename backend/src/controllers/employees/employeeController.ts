@@ -18,3 +18,11 @@ export const verifyEmployee = (req: Request, res: Response): void => {
         res.status(500).json({message: 'Error verifying employee',error: err});
     });
 }
+
+export const getAllMaintenanceRequests = (req: Request, res: Response): void => {
+    findAll(databaseConfig.maintenanceRequestCollection).then((result) => {
+        res.status(200).json({message: 'All maintenance requests retrieved successfully',data: result});
+    }).catch((err) => {
+        res.status(500).json({message: 'Error retrieving maintenance requests',error: err});
+    });
+}
