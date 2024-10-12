@@ -1,1 +1,8 @@
-<p>directions works!</p>
+<div class="directions-container"> 
+    <div>
+        <input id="location-input" placeholder="Enter location name" class="input-field" type="text" placeholder="Enter location name" />
+        <ul id="suggestions-list"></ul>
+    </div>
+    <div><p-button icon="pi pi-directions" label="Get Directions" (click)="getDirection()" styleClass="p-button-raised"></p-button></div>
+</div>
+<div id="map" class="map"></div>

@@ -1,0 +1,5 @@
+{
+    "cherryParkLocation" :[-104.6736, 39.8617],
+    "directionPathURL1" : "https://router.project-osrm.org/route/v1/driving/",
+    "directionPathURL2" :"?overview=full&geometries=geojson"
+}
