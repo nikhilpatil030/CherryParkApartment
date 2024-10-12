@@ -21,15 +21,18 @@
     margin-bottom: -3.50rem;
     color: #1abc9c; /* Customize the color */
     margin-left: 45px;
+    text-shadow: 2px 2px 4px black; /* add text shadow */
+    transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 .custom-logo-text {
     margin-top: 0;
     font-family: 'Lobster', cursive; /* Example of a stylish font */
-    font-size: 3rem; /* Adjust the size as needed */
+    font-size: 3rem; 
     color: #1abc9c; /* Customize the color */
-    text-shadow: 2px 2px 4px black; /* Optional: add text shadow */
-    font-weight: bold; /* Optional: make the text bold */
+    text-shadow: 2px 2px 4px black; /* add text shadow */
+    font-weight: bold; /* make the text bold */
     transition: color 0.3s ease; /* Smooth transition effect */
     cursor: pointer; /* Change to pointer to indicate it's clickable */
 }
