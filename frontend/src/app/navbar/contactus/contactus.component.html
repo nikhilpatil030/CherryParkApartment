@@ -1,1 +1,52 @@
-<p>contactus works!</p>
+<div class="contact-us-container" [ngStyle]="{'background-image': 'url(' + backgroundImageUrl + ')'}"> 
+    <div class="contact-us-left-container">
+        <div class="phone-container"><i class="pi pi-phone"></i>{{phone}}</div>
+        <div class="email-container"><i class="pi pi-envelope"></i>{{email}}</div>
+        <div class="hours-container"><i class="pi pi-clock"></i>{{hours}}</div>
+        <div class="address-container"><i class="pi pi-map-marker"></i>{{address}}</div>
+    </div>
+    <div class="contact-us-right-container">
+        <div class="message-container">
+            <p-card header="Want to get in touch?" styleClass="message-card">
+                <form [formGroup]="messageForm" (ngSubmit)="onSendMessage()" autocomplete="off">
+                  <div class="p-field">
+                    <input class="input-field" id="firstName" pInputText formControlName="firstName" placeholder="First Name" />
+                    <div *ngIf="messageForm.controls['firstName'].invalid && messageForm.controls['firstName'].touched" class="error-message">
+                        firstName is required.
+                    </div>
+                  </div>
+      
+                  <div class="p-field">
+                    <input class="input-field" id="lastName" pPassword formControlName="lastName" placeholder="Last Name" />
+                    <div *ngIf="messageForm.controls['lastName'].invalid && messageForm.controls['lastName'].touched" class="error-message">
+                        lastName is required.
+                    </div>
+                  </div>
+      
+                  <div class="p-field">
+                    <input class="input-field" id="email" pInputText formControlName="email" placeholder="Email Address" />
+                    <div *ngIf="messageForm.controls['email'].invalid && messageForm.controls['email'].touched" class="error-message">
+                      Email is required.
+                    </div>
+                  </div>
+      
+                  <div class="p-field">
+                    <input class="input-field" id="phoneNumber" pInputText formControlName="phoneNumber" placeholder="Phone Number" />
+                    <div *ngIf="messageForm.controls['phoneNumber'].invalid && messageForm.controls['phoneNumber'].touched " class="error-message">
+                        Phone Number is required.
+                    </div>
+                  </div>
+
+                  <div class="p-field">
+                    <textarea  class="input-field" id="message" pInputText formControlName="message" placeholder="Message"></textarea> 
+                    <div *ngIf="messageForm.controls['message'].invalid && messageForm.controls['message'].touched" class="error-message">
+                        Message is required.
+                    </div>
+                  </div>
+      
+                  <p-button label="Send Message" styleClass="signup-btn" type="submit" [disabled]="messageForm.invalid"></p-button>
+                </form>
+            </p-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+.contact-us-container{
+    display: grid;                            /* Set the container as a grid */
+    grid-template-columns: 1fr 2fr;      /* Define column widths  employee-left-container 1fr employee-right-container 6fr*/ 
+    width: 100vw;                             /* Full width */
+    height: 80vh;
+    background-size: cover;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+}
+
+/* #################################################     start of left navbar  ############################################## */
+
+.contact-us-left-container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    justify-content: center;
+}
+
+.phone-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10vh; 
+}
+
+.phone-container i{ 
+    margin-left: 50%;
+    font-size: 1.5rem;
+}   
+
+.email-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0vh; 
+}
+
+.email-container i{ 
+    margin-left: 50%;
+    font-size: 1.5rem;
+}
+
+.hours-container{
+    white-space: pre-line;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -10vh;
+}
+
+.hours-container i{
+    margin-left: 70%;
+    font-size: 1.5rem;
+}
+ 
+.address-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -7vh; 
+}
+
+.address-container i{ 
+    margin-left: 75%;
+    font-size: 1.5rem;
+} 
+
+/* #################################################     start of right navbar  ############################################## */
+
+.message-container {
+    position: relative;
+    margin-top: 4vh;
+    margin-left: 10%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-card {
+    padding-top: 40px;
+    position: relative;
+}
+
+.p-field {
+    margin-bottom: 20px;
+}
+  
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+    text-align: left;          /* Align text to the left */
+    vertical-align: top;       /* Align content to the top */
+    resize: vertical;  
+    box-sizing: border-box;
+}
+
+#message{
+    height: 100px;
+}
+
+.input-field::placeholder {
+    text-align: left;          /* Align placeholder to the left */
+    vertical-align: top;       /* Align placeholder to the top */
+    padding-top: 0;            /* Remove any extra top padding */
+    margin-top: 0;             /* Remove any extra top margin */
+    font: 1em sans-serif;
+}
+  
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+
