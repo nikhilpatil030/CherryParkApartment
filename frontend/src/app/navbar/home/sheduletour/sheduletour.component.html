@@ -1,1 +1,61 @@
-<p>sheduletour works!</p>
+<div class="shedule-tour-container"> 
+    <div class="shedule-tour-left-container">
+        <div class="tour-details-container">
+            <p-card header="Schedule a Tour" styleClass="tour-card">
+                <form [formGroup]="tourForm" (ngSubmit)="onSubmitTour()" autocomplete="off">
+                  <div class="date-time-container">
+                    <div>
+                        <label for="date">Date:</label>
+                        <div><p-calendar id="date" formControlName="date" dateFormat="yy-mm-dd" styleClass="date-field"></p-calendar></div>
+                        <div *ngIf="tourForm.controls['date'].invalid && tourForm.controls['date'].touched" class="error-message">
+                            date is required.
+                        </div>
+                    </div>
+                    <div>
+                        <label for="time">Time:</label>
+                        <input id="time" type="time" formControlName="time" class="input-field">
+                        <div *ngIf="tourForm.controls['time'].invalid && tourForm.controls['time'].touched" class="error-message">
+                            time is required.
+                        </div>
+                    </div>
+                  </div>
+                  <div class="p-field">
+                    <input class="input-field" id="firstName" pInputText formControlName="firstName" placeholder="First Name" />
+                    <div *ngIf="tourForm.controls['firstName'].invalid && tourForm.controls['firstName'].touched" class="error-message">
+                        firstName is required.
+                    </div>
+                  </div>
+      
+                  <div class="p-field">
+                    <input class="input-field" id="lastName" pPassword formControlName="lastName" placeholder="Last Name" />
+                    <div *ngIf="tourForm.controls['lastName'].invalid && tourForm.controls['lastName'].touched" class="error-message">
+                        lastName is required.
+                    </div>
+                  </div>
+      
+                  <div class="p-field">
+                    <input class="input-field" id="email" pInputText formControlName="email" placeholder="Email Address" />
+                    <div *ngIf="tourForm.controls['email'].invalid && tourForm.controls['email'].touched" class="error-message">
+                      Email is required.
+                    </div>
+                  </div>
+      
+                  <div class="p-field">
+                    <input class="input-field" id="phoneNumber" pInputText formControlName="phoneNumber" placeholder="Phone Number" />
+                    <div *ngIf="tourForm.controls['phoneNumber'].invalid && tourForm.controls['phoneNumber'].touched " class="error-message">
+                        Phone Number is required.
+                    </div>
+                  </div>
+
+                  <p-button label="Book My Tour" styleClass="custom-signup-btn" type="submit" [disabled]="tourForm.invalid"></p-button>
+                </form>
+            </p-card>
+        </div>
+    </div>
+    <div class="shedule-tour-right-container">
+        <div class="guidedTour-container"><h3>Guided Tour</h3>{{guidedTour}}</div>
+        <div class="officeInfo-container"><h3>Office Information</h3>{{officeInfo}}</div>
+        <div class="hours-container"><h3>Office Hours</h3>{{hours}}</div>
+    </div>
+</div>
+

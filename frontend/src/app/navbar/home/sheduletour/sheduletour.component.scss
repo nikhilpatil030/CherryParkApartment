@@ -1,0 +1,95 @@
+.shedule-tour-container{
+    display: grid;                            /* Set the container as a grid */
+    grid-template-columns: 2fr 1fr;      /* Define column widths  employee-left-container 1fr employee-right-container 6fr*/ 
+    width: 100vw;                             /* Full width */
+    height: 80vh;
+    background-size: cover;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+}
+
+/* #################################################     start of left navbar  ############################################## */
+
+.tour-details-container{
+    position: relative;
+    margin-top: 10vh;
+    margin-left: 20%;
+    height: 60vh;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+.tour-card {
+    height: 60vh;
+    position: relative;
+}
+
+.date-time-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2vh;
+    margin-bottom: 2vh;
+}
+
+.p-field {
+    margin-bottom: 20px;
+}
+
+.date-field{
+    height : 4vh;
+    width: 100%;
+}
+ 
+.input-field {
+    width: 100%;
+    height : 4vh;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+    text-align: left;          /* Align text to the left */
+    vertical-align: top;       /* Align content to the top */
+    resize: vertical;  
+    box-sizing: border-box;
+}
+ 
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+.custom-signup-btn {
+    margin-right: 2vh;
+    margin-top: 2vh;
+    background-color: green;
+    border-color: green;
+}
+
+/* #################################################     start of right navbar  ############################################## */
+
+.shedule-tour-right-container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: left;
+    justify-content: left;
+}
+
+.guidedTour-container{
+    margin-top: 10vh;
+    margin-right: 5vw;
+    white-space: pre-line;
+}
+
+.officeInfo-container{
+    white-space: pre-line;
+}
+
+.hours-container{
+    margin-top: -10vh;
+    white-space: pre-line;
+}
+
+
