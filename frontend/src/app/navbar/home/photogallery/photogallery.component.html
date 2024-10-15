@@ -1,1 +1,24 @@
-<p>photogallery works!</p>
+<div class="photogallery-container"  >
+    <div class="photogallery-upper-container" >
+        <h1 class="heading">Photo Gallery</h1>
+        <p class="custom-heading-text">{{heading}}</p>
+    </div>
+    <div class="photogallery-down-container">
+        <div *ngIf="!galleriaVisible" class="photos-container">
+            <div *ngFor="let photo of photos; let i = index" class="photo-item" (click)="openGalleria(i)">
+              <img [src]="photo.src" alt="Image {{i}}" class="photo-img">
+            </div>
+        </div>
+        <p-dialog [(visible)]="galleriaVisible" [modal]="true" [closable]="true" styleClass="custom-dialog">
+            <div class="dialog-content">
+                <p-galleria [(activeIndex)]="activeIndex" [value]="zoomPhotos" [numVisible]="1" [showThumbnails]="true" 
+                            fullscreen="true" [showItemNavigators]="false" [visible]="galleriaVisible" 
+                            (hide)="galleriaVisible=false" styleClass="custom-galleria">
+                    <ng-template pTemplate="thumbnail" let-photo>
+                        <img [src]="photo.src" [alt]="photo.alt" class="thumbnail-image">
+                    </ng-template>
+                </p-galleria>
+            </div>
+        </p-dialog>
+    </div>
+</div>

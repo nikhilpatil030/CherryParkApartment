@@ -1,0 +1,99 @@
+.photogallery-container{
+    //display: grid;                            /* Set the container as a grid */
+    //grid-template-rows: 1fr 2fr;     
+    width: 100vw;                             /* Full width */
+    height: 80vh;
+}
+
+.photogallery-upper-container{
+    text-align: center;
+    //background-size: cover;
+    //background-position: center; /* Center the image */
+    //background-repeat: no-repeat; /* Prevent image repetition */
+}
+
+.heading{
+    color: black;
+}
+
+.custom-heading-text{
+    margin-left: 10VW;
+    margin-right: 10VW;
+    color: black;
+}
+
+/* #################################################     start of photos  ############################################## */
+
+.photogallery-down-container{
+    background-color: white;
+}
+
+.photos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the gap between photos */
+    margin-left: 10px;
+}
+  
+.photo-item {
+    flex: 1 1 calc(20% - 5px); /* 4 photos per row minus gap */
+    box-sizing: border-box;
+}
+  
+.photo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+} 
+
+.photo-grid-image:hover {
+    transform: scale(1.05);
+}
+
+/* ###################    start of  dialog section  #################### */
+.custom-dialog{
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+}
+
+.custom-dialog .p-dialog-header {
+    background-color: white;       /* Custom header background color */
+    height: 5vh;
+}
+
+.p-dialog-header-close-icon {
+    color: black;
+}
+
+.dialog-content{
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* ###################    end of  dialog section  #################### */
+
+.custom-galleria {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.thumbnail-image {
+    width: 80vw;
+    height: 80vh;
+    object-fit: fill;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
