@@ -17,12 +17,12 @@ export class NavbarComponent implements OnInit {
         this.items = [
           { label: 'Home', icon: 'pi pi-home', routerLink: '/home', items: [
             { label: 'Shedule a Tour', icon: 'pi pi-clock', routerLink: '/sheduletour'},
-            { label: 'Your information', icon: 'pi pi-check-circle' , routerLink: '/visitorinfo'},
+            /*{ label: 'Your information', icon: 'pi pi-check-circle' , routerLink: '/visitorinfo'},*/
             { label: 'Amenities', icon: 'pi pi-building', routerLink: '/amenities'},
             {label: 'Photo Gallery', icon: 'pi pi-images', routerLink: '/photogallery'},
             {label: 'Reviews', icon: 'pi pi-comments', routerLink: '/reviews'}
           ]},
-          { label: 'About', icon: 'pi pi-book', routerLink: '/about'},
+          /*{ label: 'About', icon: 'pi pi-book', routerLink: '/about'},*/
           { label: 'Employee', icon: 'pi pi-id-card', routerLink: '/employees' },
           { label: 'Residents', icon: 'pi pi-users', routerLink: '/residents' },
           { label: 'Floor Plans', icon: 'pi pi-sitemap' , routerLink: '/floorplans'},

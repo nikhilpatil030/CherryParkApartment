@@ -57,7 +57,7 @@ const options = {
 const httpsServer = https.createServer(options, app);
 
 // Start the server
-httpsServer.listen(config.expressPort, async () => {
+app.listen(config.expressPort, async () => {
     try {
         logger.info('Server is running on port ' + config.expressPort);
         connectDatabase();

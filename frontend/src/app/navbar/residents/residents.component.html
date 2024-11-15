@@ -9,7 +9,7 @@
       <div class="login-card-container">
         <div class="circle"><i class="pi pi-user" style="font-size: 40px; color: white;"></i></div>
         <p-card header="Resident Login" styleClass="login-card" >
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
             <div class="p-field">
               <label for="username"><i class="pi pi-users"></i></label>
               <input class="input-field" id="username" pInputText formControlName="username" placeholder="Enter your username" />
