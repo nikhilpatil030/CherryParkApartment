@@ -54,6 +54,4 @@ Contributions are welcome! To contribute to this repository, please follow these
 
 This repository is licensed under the MIT license. See [LICENSE.md](LICENSE.md) for details.
 
-Please note that you'll need to replace `[Your Username]` with your actual GitHub username.
-
 Let me know if you need any further assistance!
