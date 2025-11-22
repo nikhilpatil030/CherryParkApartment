@@ -1,10 +1,14 @@
 import { Router } from 'express';
-import { getAllResidents,registerResident,verifyResident } from '../controllers/residents/residentController';
+import { getAllResidents, registerResident, verifyResident } from '../controllers/residents/residentController';
+import { verifyToken, requireRole } from '../middleware/auth.middleware';
 
 const router = Router();
 
-router.get('/getAllResidents', getAllResidents);
-router.post('/registerResident', registerResident);
-router.post('/verifyResident', verifyResident);
+// Public routes
+router.post('/register', registerResident);
+router.post('/login', verifyResident);
+
+// Protected routes - require authentication
+router.get('/all', verifyToken, requireRole(['resident', 'employee']), getAllResidents);
 
 export default router;

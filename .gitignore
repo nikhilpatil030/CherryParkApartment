@@ -5,3 +5,32 @@ frontend/.angular/cache/
 frontend/.vscode/
 frontend/dist
 frontend/tmp
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# SSL certificates and keys
+*.key
+*.cert
+*.pem
+backend/certs/
+
+# Configuration files with secrets
+backend/config/databaseConfig.json
+backend/config/*Config.json
+
+# Uploads
+backend/uploads/
+uploads/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

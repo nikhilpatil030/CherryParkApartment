@@ -1,21 +1,43 @@
-var MongoClient = require('mongodb').MongoClient;
-var databaseConfig = require('../../config/databaseConfig.json');
+import { MongoClient, Db } from 'mongodb';
+import config from '../config/env.config';
 import winstonLogger from '../controllers/logs/winstonLoggerController';
-const logger = winstonLogger('databaseConnection');
-var database:any;
 
-export const connectDatabase =  () => {
-    // Connect to the MongoDB database
-    MongoClient.connect(databaseConfig.CONNECTIONSTRING, (error:any, client:any) => {
-        if (error) {
-            // If there is an error, log it and return
-            console.error("Error connecting", error);
-            return;
+const logger = winstonLogger('databaseConnection');
+let database: Db;
+let client: MongoClient;
+
+export const connectDatabase = async (): Promise<void> => {
+    try {
+        // Connect to the MongoDB database with connection pooling
+        client = new MongoClient(config.mongodb.connectionString, {
+            maxPoolSize: 10,
+            minPoolSize: 2,
+            serverSelectionTimeoutMS: 5000,
+            socketTimeoutMS: 45000,
+        });
+
+        await client.connect();
+        database = client.db(config.mongodb.databaseName);
+
+        // Test the connection
+        await database.command({ ping: 1 });
+        logger.info("Database connected successfully");
+    } catch (error) {
+        logger.error("Error connecting to database: " + error);
+        throw error;
+    }
+}
+
+export const closeDatabase = async (): Promise<void> => {
+    try {
+        if (client) {
+            await client.close();
+            logger.info("Database connection closed");
         }
-        // Store the database in the database variable
-        database = client.db(databaseConfig.DATABASENAME);
-        logger.info("Database connected");
-    });
+    } catch (error) {
+        logger.error("Error closing database connection: " + error);
+        throw error;
+    }
 }
 
 export function findAll(collectionName:string):Promise<any> {

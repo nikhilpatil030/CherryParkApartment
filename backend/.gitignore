@@ -1,0 +1,40 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+logs/
+*.log
+
+# SSL certificates
+*.key
+*.cert
+*.pem
+certs/
+
+# Uploads
+uploads/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+
+# Configuration files with secrets
+config/databaseConfig.json
+config/*Config.json
